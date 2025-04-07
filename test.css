@@ -1,0 +1,386 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fullscreen Background Image */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(12, 12, 15);
+    color: white;
+    display: flex;
+    /* height: 250vh; */
+    overflow: visible;
+    overflow-x: hidden;
+    scroll-behavior:smooth;
+
+}
+
+/* Navigation Bar */
+nav {
+    background:linear-gradient(to right, rgb(0, 0, 0), rgba(255, 0, 0, 0));
+    width: 150px;
+    height: 110vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    z-index: 2;
+    transition: width 0.3s ease-in-out;
+    margin-top: -2vh;
+    margin-left: -1vh;
+}
+
+/* Expand Navigation on Hover */
+nav:hover {
+    width: 250px;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Verdana;
+    margin-bottom: 275px;
+    transition: margin-left 0.3s ease-in-out;
+    transition: pop 0.3s eae;
+
+}
+
+nav:hover .logo {
+    margin-left: 10px;
+}
+
+/* Navigation Links */
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+ul li {
+    margin-bottom: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateX(-20px);
+}
+
+nav:hover ul li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+   
+}
+
+ul li a:hover {
+    text-indent: 5%;
+    /* background-color: #49474782; */
+}
+/* Fullscreen Image Slider */
+.slider-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: visible;
+    position: absolute;
+    z-index: 1;
+}
+.slider {
+   
+    display: flex;
+    width: 300%;
+    height: 80%;
+    transition: transform 1.5s ease-in-out;
+}
+.slide {
+    width: 100vw;
+    height: 90vh;
+    flex-shrink: 0;
+}
+.slide img {
+    width: 100%;
+    height: 90%;
+
+    object-fit:cover;
+}
+
+/* Navigation Dots */
+.dots {
+    position: absolute;
+    bottom: 30vh;
+    left: 90%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+.dot {
+    width: 8px;
+    height: 8px;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.dot.active {
+    background: rgb(91, 90, 90);
+    transform: scale(1.3);
+}
+
+/* Fixed Small Image */
+#image1 {
+    position: fixed;
+    top: 350px;
+    left: 720px;
+    width: 5vw;
+    height: 10vh;
+}
+
+
+/* General Layout Fixes */
+
+
+/* Movie Section */
+.movie-section {
+    background-color: rgb(0, 0, 0);
+    height: auto;
+    
+    color: white;
+    
+    margin-left: 5vw; /* Adjust margin */
+
+    position: relative; /* Ensure it's positioned correctly */
+    z-index: 1; /* Ensure it's above absolute elements */
+    
+        margin-top: 80px; /* Increase spacing */
+        padding-bottom: 50px; /* Prevent cut-off */
+        width: 165vh;
+         
+            position: relative;
+            z-index: 100;
+}
+
+
+.movie-section h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+/* Movie Scrolling Container */
+.movie-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+    margin-right: 40vh;
+}
+
+/* Movie List */
+.movies {
+    display: flex;
+    gap: 35px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    scroll-behavior: smooth;
+
+    width: 100%;
+    padding: 10px;
+    max-width: 150px;
+        max-height: 200px;
+    
+    
+}
+
+.movies::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+/* Movie Images */
+.movies img {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.movies img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+/* Additional Movie Sections */
+.more-movies {
+    margin-top: 60px; /* Added margin to create space */
+}
+
+.more-movies .movie-category {
+    margin-bottom: 20px;
+}
+
+.movie-category h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    margin-left:18vh ;
+}
+
+/* Movie Grid Layout */
+.movie-grid {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 10px;
+    margin-right: 23vh;
+    width: 300vh;
+    overflow-x: scroll;
+    margin-right: 0; /* Remove right margin */
+    padding: 10px 20px; /* Add padding for spacing */
+}
+
+.movie-grid img {
+    width: 160px;
+    height: 230px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie-grid img:hover {
+    transform: scale(1.1);
+}
+.shows {
+    overflow: visible !important;
+    min-height: auto; /* Increase height */
+}
+
+.movie-grid {
+    display: flex;
+    flex-wrap: nowrap;  /* Prevent wrapping */
+    gap: 18px;
+    padding: 10px;
+    width: 100%; /* Ensure it fits the parent */
+    max-width: 200vw; /* Prevent exceeding the viewport */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-behavior: smooth;
+    margin-left: 4vh;
+    height: 30vh;
+   
+}
+
+/* Ensure images are displayed properly */
+.movie-grid img {
+    width: 160px;
+    height: 230px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Add a visible scrollbar */
+.movie-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.movie-grid::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.movie-grid::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+footer {
+    background-color: #111;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 20vh;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    height: 170px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ff0000;
+    display: inline-block;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ff6b6b;
+}
+
+.footer-section img {
+    width: 30px;
+    margin: 5px;
+}
+
+.footer-bottom {
+    margin-top: 10px;
+    padding: 10px;
+    background: #000000;
+}
+section {
+    scroll-margin-top: 80px; /* Adjust based on navbar height */
+    padding: 50px 20px;
+    margin-top: -8vh;
+}
